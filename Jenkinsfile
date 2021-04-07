@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("indu12/image1")
+        app = docker.build("indu-229/image1")
     }
     stage('Push image') {
         /* 
