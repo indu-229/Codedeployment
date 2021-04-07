@@ -1,7 +1,13 @@
 node{
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com','dockerhub'){
+    stage('Build Image')
+    {
     def buildImg=docker.build("indu12/myimg")
+    }
+    stage('Push Image')
+    {
     buildImg.push()
+    }
    }
 }
