@@ -1,8 +1,9 @@
 node{
+    def buildImg
     checkout scm
     stage('Build Image')
     {
-    def buildImg=docker.build("indu12/myimg")
+    buildImg=docker.build("indu12/myimg")
     }
     stage('Push Image')
     {
