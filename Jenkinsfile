@@ -1,7 +1,10 @@
+properties([parameters([choice(choices:['master','develop'],
+description:'Select Branch to build',name:'branch')])])
 node {
     def app
 
     stage('Clone repository') {
+	 echo "pulling changes from the branch ${params.branch}"
         /* Cloning the Repository to our Workspace */
 
         checkout scm
