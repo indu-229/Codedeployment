@@ -1,4 +1,4 @@
-properties([parameters([choice(choices:['master','develop'],
+properties([parameters([choice(choices:['master','develop','feature'],
 description:'Select Branch to build',name:'branch')])])
 node {
     def app
