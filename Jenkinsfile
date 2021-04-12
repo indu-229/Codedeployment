@@ -13,7 +13,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        Myapp = docker.build("indu12/dockerimg-master")
+        Myapp = docker.build("indu12/dockerimg-develop")
     }
     stage('Push image') {
         /* 
