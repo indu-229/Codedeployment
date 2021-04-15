@@ -1,0 +1,42 @@
+pipeline
+{
+    environment
+    {
+        imagename="indu12/image34"
+        registryCredential='dockerhub'
+        dockerImage=''
+    }
+    agent any
+    stages{
+
+    stage('Cloning Git') {
+	
+        /* Cloning the Repository to our Workspace */
+        steps{
+
+        git 'https://github.com/indu-229/Codedeployment.git'
+               }
+         }
+    stage('Build image') {
+        /* This builds the actual image */
+        steps{
+
+        script {
+dockerImage = docker.build imagename
+                }
+            }
+        }
+    stage('Push image') {
+        steps
+        {
+        script
+        {
+        docker.withRegistry( '', registryCredential){
+        dockerImage.push()
+        
+        }
+        }
+       }
+    }
+  }
+}
