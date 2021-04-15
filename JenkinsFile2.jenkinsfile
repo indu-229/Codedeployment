@@ -6,7 +6,7 @@ pipeline
 {
     environment
     {
-        imagename="indu12/image-3"
+        imagename="indu12/image-4"
         registryCredential='dockerhub'
         dockerImage=''
     }
