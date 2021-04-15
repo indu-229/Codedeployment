@@ -1,4 +1,7 @@
-properties([parameters([[$class: 'ChoiceParameter', choiceType: 'PT_CHECKBOX', description: 'Select a branch to build', filterLength: 1, filterable: false, name: 'Branch', randomName: 'choice-parameter-87396534004900', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], script: [classpath: [], sandbox: false, script: 'return[\'master\',\'develop\',\'feature\',\'feature-1\']']]]])])
+properties([parameters([[$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: '', filterLength: 1, filterable: false, name: '', randomName: 'choice-parameter-93618894495400', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], script: [classpath: [], sandbox: false, script: '''def gettags = ("git ls-remote -t -h ssh://jenkins@<mygitpath>/repo/some.git feature/*").execute()
+return gettags.text.readLines().collect{
+it.split()[1].replaceAll(\'refs/heads/\',\'\').replaceAll(\'refs/tags/\',").replaceAll("\\\\^\\\\{\\\\}",")
+}''']]]])])
 node
 {
     def Myapp
