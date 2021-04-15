@@ -1,4 +1,4 @@
-properties([parameters([choice(choices:['master','develop','feature'],description:'Select Branch to build',name:'branch')])])
+properties([parameters([[$class: 'ChoiceParameter', choiceType: 'PT_CHECKBOX', description: 'Select a branch to build', filterLength: 1, filterable: false, name: 'Branch', randomName: 'choice-parameter-85673249401400', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], script: [classpath: [], sandbox: false, script: 'return[\'master\',\'develop\',\'feature\',\'feature-1\']']]]])])
 node {
     def Myapp
 
