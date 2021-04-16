@@ -18,7 +18,7 @@ pipeline
         /* Cloning the Repository to our Workspace */
         steps{
 
-        git 'https://github.com/indu-229/Codedeployment.git'
+        git branch: '$Branch', url: 'https://github.com/indu-229/Codedeployment.git'
                }
          }
     stage('Build image') {
