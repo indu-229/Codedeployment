@@ -1,5 +1,11 @@
 node {
+    // Git checkout before load source the file
+    checkout scm
     def rootDir = pwd()
-    def exampleModule = load "${rootDir}@script/test.Groovy "
-    exampleModule.test()
+    println("Current Directory: " + rootDir)
+
+    // point to exact source file
+    def example = load "${rootDir}/test.Groovy"
+
+    example.test()
 }
