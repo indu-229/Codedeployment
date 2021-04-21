@@ -1,11 +1,5 @@
-def code
-
-node{
-  stage('Checkout') {
-    checkout scm
-  }
-
-  stage('Load') {
-    code = load 'test.groovy'
-  }
+node {
+    def rootDir = pwd()
+    def exampleModule = load "${rootDir}@script/test.Groovy "
+    exampleModule.test()
 }
