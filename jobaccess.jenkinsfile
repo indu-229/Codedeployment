@@ -1,8 +1,6 @@
-properties([parameters([[$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: 'select job', filterLength: 1, filterable: false, name: 'job', randomName: 'choice-parameter-243743889849200', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], script: [classpath: [], sandbox: false, script: '''import hudson.model.*
-
-hudson.model.Hudson.instance.items.findAll{job -> job}.each {
-    job -> println("Job: " + job.name)
-}''']]]])])
+properties([parameters([[$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: 'Select job to build', filterLength: 1, filterable: false, name: 'Job', randomName: 'choice-parameter-244105083060900', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], script: [classpath: [], sandbox: false, script: '''Jenkins.instance.getAllItems(AbstractItem.class).each {
+    println it.fullName + " - " + it.class
+};''']]]])])
 def test
 node{
   stage('Checkout') {
