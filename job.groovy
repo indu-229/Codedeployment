@@ -3,13 +3,15 @@ import jenkins.security.*
 import jenkins.model.*
 import hudson.security.*
 import hudson.model.User   
-  def rest(){
+  def rest(job){
     //getting the names of the jobs
     def jobNames = []
     Jenkins.instance.getAllItems(AbstractItem.class).each { 
   jobNames.add(it.fullName) 
 }
 // For each project
+    def test1=[]
+    test1.add(job)
 for(item in Hudson.instance.items) {
   for(jobName in jobNames){
     if(item.name.equalsIgnoreCase(jobName))
