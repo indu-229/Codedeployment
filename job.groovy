@@ -18,7 +18,7 @@ for(item in Hudson.instance.items) {
       //adding the users to give access
         users.add('user2');
       echo "providing access of the job:${jobName} to the user:user1"
-     // println(item+"to user1")
+     // println(item+"to user2")
       
       
       //providing all the permissions
