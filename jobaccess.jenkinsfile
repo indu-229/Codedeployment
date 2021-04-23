@@ -1,6 +1,4 @@
-properties([parameters([[$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: 'Select job to build', filterLength: 1, filterable: false, name: 'Job', randomName: 'choice-parameter-244105083060900', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''], script: [classpath: [], sandbox: false, script: '''Jenkins.instance.getAllItems(AbstractItem.class).each {
-    println it.fullName + " - " + it.class
-};''']]]])])
+properties([parameters([choice(choices: ['Job-in-slave', 'Job-in-slave2'], description: 'Select job to give access', name: 'Job')])])
 def test
 node{
   stage('Checkout') {
