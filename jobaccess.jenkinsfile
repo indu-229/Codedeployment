@@ -1,4 +1,4 @@
-properties([parameters([choice(choices: ['Job-in-slave', 'Job-in-slave2'], description: 'Select job to give access', name: 'Job')])])
+properties([parameters([choice(choices: ['Job-in-slave', 'Job-in-slave2', 'build-image', 'parameterized-builds'], description: 'Select job to give access', name: 'Job')])])
 def test
 node{
   stage('Checkout') {
