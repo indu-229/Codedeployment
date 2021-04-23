@@ -13,7 +13,7 @@ import hudson.model.User
     def test1=[]
     test1.add(job)
 for(item in Hudson.instance.items) {
-  for(jobName in jobNames){
+  for(jobName in test1){
     if(item.name.equalsIgnoreCase(jobName))
     {
         Set<String> users = new HashSet<>();
