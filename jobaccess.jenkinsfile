@@ -52,8 +52,6 @@ for(item in Hudson.instance.items) {
    */
      
   }
- }
-}
         }
       }
     }
