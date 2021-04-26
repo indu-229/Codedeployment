@@ -2,7 +2,7 @@ properties([parameters([[$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELEC
 import hudson.model.*
 def jobNames=[]
 Jenkins.instance.getAllItems(AbstractItem.class).each {jobNames.add(it.fullName) };
-return job''']]]])])
+return jobNames''']]]])])
 def test
 node{
   stage('Checkout') {
